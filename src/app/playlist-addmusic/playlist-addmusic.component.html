@@ -1,0 +1,79 @@
+<div class="wrapper">
+        <app-header></app-header>
+        <div class="main-panel">
+          <!-- Navbar -->
+          <app-navbar></app-navbar>
+          <!-- End Navbar -->
+          <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="card">
+                      <div class="card-header card-header-rose card-header-icon">
+                        <div class="card-icon">
+                          <i class="material-icons">assignment</i>
+                        </div>
+                        <h4 class="card-title">Últimas canciones</h4>
+                      </div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th>Nombre</th>
+                                <th class=" text-left">Agregar a la playlist</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let song of songs">
+                                  <td>{{song.name}}</td>
+                                  <td>
+                                    <button type="button" (click)="addToPlaylist(song)" rel="tooltip" class="btn btn-info">
+                                        <i class="material-icons">add</i>
+                                    </button>
+                                  </td>
+                                </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                        <div class="card">
+                          <div class="card-header card-header-rose card-header-icon">
+                            <div class="card-icon">
+                              <i class="material-icons">assignment</i>
+                            </div>
+                            <h4 class="card-title">Canciones Agredadas</h4>
+                          </div>
+                          <div class="card-body">
+                            <div class="table-responsive">
+                              <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th>Nombre</th>
+                                    <th class=" text-left">Eliminar de la playlist</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let song of songsAdded">
+                                      <td>{{song.name}}</td>
+                                      <td>
+                                        <button type="button" (click)="removeToPlaylist(song)" rel="tooltip" class="btn btn-info">
+                                            <i class="material-icons">clear</i>
+                                        </button>
+                                      </td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+              </div>
+          </div>
+          <app-footer></app-footer>
+        </div>
+      </div>

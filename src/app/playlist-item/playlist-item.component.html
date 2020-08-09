@@ -1,0 +1,57 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <div class="main-panel">
+        <!-- Navbar -->
+        <app-navbar></app-navbar>
+        <!-- End Navbar -->
+        <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="card" *ngIf="playlist != null">
+                          <div class="card-header card-header-rose card-header-icon">
+                            <div class="card-icon">
+                              <i class="material-icons">assignment</i>
+                            </div>
+                            <h4 class="card-title">{{playlist.name}}</h4>
+                          </div>
+                          <div class="card-body">
+                            <button (click)="addMusic()" class="btn btn-success">Agregar Música</button>
+                          </div>
+                          <div class="card-body">
+                            <div class="table-responsive">
+                              <table class="table">
+                                <thead>
+                                  <tr>
+                                    <th>Nombre</th>
+                                    <th class=" text-left">Reproducir</th>
+                                    <th class=" text-lef">Eliminar</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr *ngFor="let song of playlist.songs">
+                                      <td>{{song.name}}</td>
+                                      <td class="td-actions text-center">
+        
+                                        <mat-basic-audio-player [audioUrl]="URLSONGS+song.url" [title]="msbapTitle" [autoPlay]="false" muted="muted" (trackEnded)="onEnded($event)"
+                                        [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="msaapDisplayVolumeControls" ></mat-basic-audio-player>
+                                      </td>
+                                      <td class="td-actions text-center">
+
+                                        <button type="button" (click)="goToPlaylist(playlist.idplaylist)" rel="tooltip" class="btn btn-info">
+                                            <i class="material-icons">delete</i>
+                                        </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+        <app-footer></app-footer>
+    </div>
+</div>

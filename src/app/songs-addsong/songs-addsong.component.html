@@ -1,0 +1,40 @@
+<div class="wrapper">
+        <app-header></app-header>
+        <div class="main-panel">
+          <!-- Navbar -->
+          <app-navbar></app-navbar>
+          <!-- End Navbar -->
+          <div class="content">
+              <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="card ">
+                        <div class="card-header card-header-rose card-header-icon">
+                          <div class="card-icon">
+                            <i class="material-icons">play_arrow</i>
+                          </div>
+                          <h4 class="card-title">Agregar Canción</h4>
+                        </div>
+                        <div class="card-body ">
+                            <div class="form-group">
+                              <label for="exampleEmail" class="bmd-label-floating">Nombre</label>
+                              <input type="email" [(ngModel)]="name" class="form-control" id="exampleEmail">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleEmail" class="bmd-label-floating">Canción</label>
+                                <input type="file" id="myfile" name="myfile" accept="audio/ogg, audio/mpeg" style="position: unset;
+                                background-color: aliceblue;
+                                opacity: inherit;" (change)="uploadFile($event)">
+                            </div>
+                        </div>
+                        <div class="card-footer ">
+                          <button type="submit" (click)="addSong()"class="btn btn-fill btn-rose">Subir</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+          <app-footer></app-footer>
+        </div>
+      </div>
