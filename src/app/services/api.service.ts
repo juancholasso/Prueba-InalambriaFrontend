@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class ApiService  implements OnInit{
 
-  public URL:string = "http://192.168.0.112:3000";
+  public URL:string = "http://ec2-52-3-248-74.compute-1.amazonaws.com:3000";
   httpOptions = {
     headers: new HttpHeaders({ 
       'Access-Control-Allow-Origin':'*'
