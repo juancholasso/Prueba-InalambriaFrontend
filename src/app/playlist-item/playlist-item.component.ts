@@ -11,7 +11,8 @@ export class PlaylistItemComponent implements OnInit {
 
   private id:number;
   public playlist:any= null;
-
+  public URLSONGS:string = this.service.URL+"/public/uploads/songs/";
+  
   constructor(private service:ApiService, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {

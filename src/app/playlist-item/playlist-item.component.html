@@ -25,7 +25,6 @@
                                   <tr>
                                     <th>Nombre</th>
                                     <th class=" text-left">Reproducir</th>
-                                    <th class=" text-lef">Eliminar</th>
                                   </tr>
                                 </thead>
                                 <tbody>
@@ -36,13 +35,7 @@
                                         <mat-basic-audio-player [audioUrl]="URLSONGS+song.url" [title]="msbapTitle" [autoPlay]="false" muted="muted" (trackEnded)="onEnded($event)"
                                         [displayTitle]="msbapDisplayTitle" [displayVolumeControls]="msaapDisplayVolumeControls" ></mat-basic-audio-player>
                                       </td>
-                                      <td class="td-actions text-center">
-
-                                        <button type="button" (click)="goToPlaylist(playlist.idplaylist)" rel="tooltip" class="btn btn-info">
-                                            <i class="material-icons">delete</i>
-                                        </button>
-                                        </td>
-                                    </tr>
+                                    
                                 </tbody>
                               </table>
                             </div>
